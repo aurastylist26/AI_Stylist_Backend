@@ -6,7 +6,11 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-app = FastAPI()
+app = FastAPI(
+    title="Aura Stylist API",
+    docs_url="/docs",       # 👈 force enable docs
+    redoc_url="/redoc"
+)
 
 # --- CORS ---
 app.add_middleware(
