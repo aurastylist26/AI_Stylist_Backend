@@ -4,6 +4,6 @@ from motor.motor_asyncio import AsyncIOMotorClient
 # PASTE YOUR EXACT MONGODB LINK INSIDE THESE QUOTES:
 MONGO_URL = "mongodb+srv://officialaurastylist26:aurastylist123@cluster26.bohww7c.mongodb.net/aura_saas?retryWrites=true&w=majority"
 
-client = AsyncIOMotorClient(MONGO_URL)
+client = AsyncIOMotorClient(mongodb+srv://officialaurastylist26:aurastylist123@cluster26.bohww7c.mongodb.net/aura_saas?retryWrites=true&w=majority)
 db = client.aura_saas
 users_collection = db.users
