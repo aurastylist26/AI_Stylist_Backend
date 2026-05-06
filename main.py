@@ -138,9 +138,9 @@ async def login(user: Login):
     if not db_user or not pwd_context.verify(user.password, db_user["password"]):
         raise HTTPException(status_code=400, detail="Incorrect email or password")
         
-    # NEW: Block them if they haven't typed in their OTP yet!
-    if not db_user.get("is_verified"):
-        raise HTTPException(status_code=403, detail="Please verify your email address before logging in.")
+    # TEMPORARILY DISABLED: Block them if they haven't typed in their OTP yet!
+    # if not db_user.get("is_verified"):
+    #     raise HTTPException(status_code=403, detail="Please verify your email address before logging in.")
         
     # If they pass all checks, hand them the keys to the app
     token = create_token({"sub": user.email})
